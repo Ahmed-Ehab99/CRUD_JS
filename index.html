@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pharmacy</title>
+    <link rel="icon" href="./hospital.png" type="image/x-icon" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+  </head>
+  <body>
+    <section class="py-4">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 first">
+          <h1 class="my-3">Pharmacy</h1>
+          <i class="fa-solid fa-suitcase-medical"></i>
+        </div>
+
+        <label for="productName">Product Name</label>
+        <input
+          type="text"
+          placeholder="Name"
+          class="form-control"
+          id="productName"
+        />
+
+        <div class="d-lg-flex d-sm-block justify-content-between">
+          <div class="width">
+            <label for="productPrice">Product Price</label>
+            <input
+              type="number"
+              placeholder="Price"
+              class="form-control"
+              id="productPrice"
+            />
+          </div>
+          <div class="width">
+            <label for="productCateg">Product Categ.</label>
+            <input
+              type="text"
+              placeholder="Category"
+              class="form-control"
+              id="productCateg"
+            />
+          </div>
+        </div>
+
+        <label for="productDesc">Product Desc.</label>
+        <input
+          type="text"
+          placeholder="Description"
+          class="form-control"
+          id="productDesc"
+        />
+
+        <div class="d-lg-flex d-sm-block justify-content-between">
+          <div class="width">
+            <label for="productCount">Product Count</label>
+            <input
+              type="number"
+              placeholder="Count"
+              class="form-control"
+              id="productCount"
+            />
+          </div>
+          <div class="width">
+            <label for="search">Search</label>
+            <input
+              type="text"
+              placeholder="Search About Product Name"
+              class="form-control"
+              id="search"
+              onkeyup="searchProduct(this.value)"
+            />
+          </div>
+        </div>
+
+        <button
+          class="btn btn-secondary mt-3 me-3"
+          id="update"
+          type="button"
+          onclick="addProduct()"
+        >
+          Add Product
+        </button>
+        <button
+          class="btn btn-danger mt-3"
+          id="deleteAll"
+          onclick="deleteAll()"
+          type="button"
+        >
+          Delete All
+        </button>
+
+        <table class="mt-5 text-center">
+          <thead>
+            <th>NO.</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Count</th>
+            <th>Delete</th>
+            <th>Update</th>
+          </thead>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
